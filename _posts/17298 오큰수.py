@@ -2,6 +2,7 @@ import sys
 
 N = int(sys.stdin.readline())
 
+<<<<<<< Updated upstream
 NEG = list(map(int, sys.stdin.readline().split()))
 
 stack = []
@@ -17,3 +18,19 @@ for i in range(N):
 print(*ans)
 
 # index 함수는 시간 복잡도가 O(n)이다.
+=======
+lst = list(map(int, sys.stdin.readline().split()))
+stack = []
+visit = [-1] * N
+
+
+
+for i in range(N):
+    while stack and (stack[-1][0] < lst[i]):
+        num, idx = stack.pop()
+        visit[idx] = lst[i]
+    stack.append((lst[i], i))
+    
+    
+print(*visit)
+>>>>>>> Stashed changes
